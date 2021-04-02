@@ -1,0 +1,145 @@
+*, ::after, ::before{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  color: #222;
+  font-size: 18px;
+  line-height: 1.15;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  padding: 10px;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.tabs-title {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  height: 36px;
+}
+
+.tabs-control {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tabs-control li {
+  margin-left: 10px;
+}
+
+.tabs-control-item {
+  display: block;
+	outline: none;
+	text-decoration: none;
+	color: lightgray;
+  text-transform: uppercase;
+}
+
+.tabs-control-item.active {
+  color: orange;
+}
+
+.tabs-content {
+  padding: 10px;
+  border: 3px solid lightsteelblue;
+  border-radius: 10px;
+}
+
+.tabs-content-item {
+	display: none;
+  height: 300px;
+}
+
+.tabs-content-item.active {
+	display: flex;
+}
+
+#buy-fonts {
+  align-items: center;
+  text-align: center;
+}
+
+#font-buttons {
+  padding: 0;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#font-buttons label {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#font-buttons input {
+  display: none;
+}
+
+#font-buttons input:checked + label {
+  opacity: .5;
+}
+
+#font-buttons label[for="font1"] {
+  background-color: green;
+  float: left;
+  display: block;
+  height: 100%;
+  width: calc(33% - 40px);
+}
+
+#font-buttons label[for="font2"] {
+  background-color: pink;
+  display: block;
+  float: right;
+  height: 50%;
+  width: calc(67% - 40px);
+}
+
+#font-buttons label[for="font3"] {
+  background-color: lightskyblue;
+  display: block;
+  float: right;
+  height: 50%;
+  width: calc(67% - 40px);
+}
+
+@media only screen and (max-width: 680px) {
+  .tabs-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+  }
+
+  .tabs-title { 
+    margin: 20px 0;
+    height: auto;
+  }
+
+  #my-fonts.active {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
+  
+  #font-buttons label[for*="font"] {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+}
